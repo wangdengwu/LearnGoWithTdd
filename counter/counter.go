@@ -10,9 +10,13 @@ type Counter struct {
 	value int
 }
 
-func (c *Counter) Inc() {
+func (c *Counter) IncAsync() {
 	c.Lock()
 	defer c.Unlock()
+	c.value++
+}
+
+func (c *Counter) IncSync() {
 	c.value++
 }
 
