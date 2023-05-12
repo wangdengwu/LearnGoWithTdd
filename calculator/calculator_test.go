@@ -24,6 +24,13 @@ func TestAdd(t *testing.T) {
 			t.Errorf("want %d got %d", want, got)
 		}
 	})
+	t.Run("test two float add", func(t *testing.T) {
+		got := Add(1.0, 1.2, 1.3)
+		want := 3.5
+		if want != got {
+			t.Errorf("want %g got %g", want, got)
+		}
+	})
 }
 
 func TestDiv(t *testing.T) {

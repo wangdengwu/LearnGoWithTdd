@@ -3,7 +3,11 @@
 
 package calculator
 
-func Add(is ...int) (sum int) {
+type Number interface {
+	int | float64
+}
+
+func Add[T Number](is ...T) (sum T) {
 	for i := 0; i < len(is); i++ {
 		sum += is[i]
 	}
